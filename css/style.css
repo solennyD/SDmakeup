@@ -1,0 +1,268 @@
+body {
+    color: black;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    background-image:url(../imagen/cesta.jpg);
+    background-repeat: no-repeat;
+   
+}
+    
+  header{
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #c7c4c4a6;
+    padding-top: 0%;
+    
+  }
+
+  /* Estilo general para el contenedor del menú */
+.menu {
+  display: flex;
+  justify-content: center; 
+  padding: 15px 0;
+  border-bottom: 2px  solid #cea10c;  
+ 
+}
+
+
+
+
+/* Estilo para los enlaces */
+.menu a {
+  text-decoration: none;  
+  display: inline-block;  
+  padding: 10px 20px;  
+  margin: 0 15px;  
+  background-color: #cea10c;  
+  color: white;  
+  font-size: 16px;  
+  font-weight: bold;  
+  border-radius: 5px;  
+  text-align: center; 
+  transition: background-color 0.3s ease, transform 0.2s ease;  
+}
+
+/* Efecto hover para los enlaces (cuando el usuario pasa el mouse) */
+.menu a:hover {
+  background-color: #fbe798;  
+  transform: scale(1.1);  
+}
+
+/* Efecto activo (cuando el enlace es clickeado) */
+.menu a:active {
+  transform: scale(1);  
+}
+
+/* Estilo para los elementos dentro de los enlaces */
+.menu a div {
+  padding: 5px 0; 
+}
+
+/* Opcional: Efecto de sombra en los enlaces */
+.menu a:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  
+}
+
+/* Opcional: Efecto de enfoque (focus) para accesibilidad */
+.menu a:focus {
+  outline: none;  
+  box-shadow: 0 0 0 2px #d4af37;  
+}
+
+
+ /* Estilo general para los fieldsets------------------------------------------------------------------ */
+.info-fieldset {
+  border: 2px solid #d4af37; 
+  padding: 20px;
+  border-radius: 10px;        
+  margin: 20px auto;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.85);  
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);     
+  transition: all 0.3s ease-in-out;               
+}
+
+/* Efecto al pasar el mouse sobre el fieldset */
+.info-fieldset:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);   
+  border-color: #b18e00;  
+}
+
+/* Estilo para el legend */
+legend {
+  font-size: 20px;  
+  font-weight: bold;
+  color: #333;      
+  background-color: rgba(255, 255, 255, 0.9);  
+  padding: 0 15px;
+  border-radius: 20px;
+  border: 1px solid #d4af37;  
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);  
+  text-transform: uppercase;
+}
+
+/* Estilo para los fieldsets alternados */
+.info-fieldset:nth-child(odd) {
+  background-color: rgba(240, 240, 240, 0.85);  
+}
+
+.info-fieldset:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.85);  
+}
+
+  
+  h4{
+      color:rgb(14, 14, 14);
+      text-align: center;
+      
+  }
+  
+  h5{
+    color:rgb(14, 14, 14);
+    text-align: center;
+    
+}
+
+  
+  img{
+      width: 150px;
+      display: flex;
+      margin-left: 1%;
+      margin-right: 30%;
+  }
+  
+
+  
+  h1{
+  color:black;
+  text-align: center;
+  }
+  
+  h2{
+    color: black;
+    font-size: 15px;
+    padding: auto;
+   
+  }
+  
+  
+  .container{
+    margin-right: 80px;
+      display: flex;
+      position: fixed;
+      width: 90px;
+      left: 10px;
+      bottom: 10px;
+  }
+      
+.social {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px;
+}
+
+.p{
+    display: flex;
+}
+
+
+.social img {
+    width: 45px; 
+    height: 35px; 
+}
+
+/* Estilo general del formulario */
+form {
+  width: 50%; 
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(203, 202, 202, 0.444);  
+  border: 2px solid #d4af37;  
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  
+  text-align: center;  
+}
+
+/* Estilo para los divs que contienen los inputs y etiquetas */
+div {
+  margin-bottom: 15px;  
+}
+
+/* Estilo para las etiquetas */
+label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;  
+}
+
+/* Estilo para los campos de entrada (inputs) */
+input[type="text"], input[type="email"], input[type="number"], input[type="tel"] {
+  width: 40%;  
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;  
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: inline-block;  
+}
+
+/* Efecto de enfoque (focus) */
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="tel"]:focus {
+  border-color: #d4af37;  
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);  
+}
+
+/* Estilo para los botones */
+button {
+  background-color: #66d437; 
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 10px;
+}
+
+/* dar color al boton registrar */
+button:hover {
+  background-color: #b18e00;  
+  transform: scale(1.05);  
+}
+
+button:active {
+  transform: scale(1);  
+}
+
+/* Fondo rojo para el botón "Eliminar" */
+button[type="reset"] {
+  background-color: #f44336;  
+}
+
+/* Color rojo más oscuro al pasar el ratón */
+button[type="reset"]:hover {
+  background-color: #3c0505;  
+}
+
+
+footer {
+    position: fixed;  
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0; 
+    background-color: rgb(143, 140, 140);
+}
+
+
+
+
