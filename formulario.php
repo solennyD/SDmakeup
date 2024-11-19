@@ -26,7 +26,7 @@
         if (!$ejecutarInsertar) {
             echo "Error en la consulta SQL: " . mysqli_error($enlace);
         } else {
-            echo "Registro exitoso!";
+            echo "<h1>Registro exitoso!</h1>";
         }
     }
 ?>
