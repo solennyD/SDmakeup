@@ -38,7 +38,7 @@
     <title>proyectofinal</title>
     <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="2;url=login.php"> <!-- Redirigir después de 2 segundos -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
