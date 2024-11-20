@@ -25,7 +25,7 @@
         $message = isset($_POST['message']) ? $_POST['message'] : '';
 
         // Insertar los datos en la base de datos
-        $query = "INSERT INTO citas (name, email, service, date, time, message) 
+        $query = "INSERT INTO citas_servicios(name, email, service, date, time, message) 
                   VALUES ('$name', '$email', '$service', '$date', '$time', '$message')";
 
         if ($conn->query($query) === TRUE) {
