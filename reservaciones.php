@@ -1,43 +1,38 @@
 <?php
-    // Conexión a la base de datos
-    $host = 'localhost';  // Cambia esto por tu host si es diferente
-    $user = 'root';  // Cambia esto por tu usuario de la base de datos
-    $password = '';  // Cambia esto por tu contraseña de la base de datos
-    $dbname = 'sdmakeup';  // Cambia esto por el nombre de tu base de datos
+$servidor = "localhost";
+$usuario = "root";
+$clave = "";
+$baseDatos = "sdmakeup";
 
-    // Crear la conexión
-    $conn = new mysqli($host, $user, $password, $dbname);
-    
+$enlace = mysqli_connect($servidor, $usuario, $clave, $baseDatos);
 
-    // Verificar la conexión
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
+if (!$enlace) {
+    echo "Error de conexión: " . mysqli_connect_error();
+}
+
+// Procesar el formulario cuando se hace el submit
+if (isset($_POST['agendar'])) {
+    // Captura los datos del formulario
+    $Nombre_Completo = $_POST['Nombre_Completo'];
+    $Correo_Electronico = $_POST['Correo_Electronico'];
+    $Servicios = $_POST['Servicios'];
+    $Fecha_de_cita = $_POST['Fecha_de_cita'];
+    $Hora_de_cita = $_POST['Hora_de_cita'];
+    $Mensaje = isset($_POST['Mensaje']) ? $_POST['Mensaje'] : '';
+
+    // Insertar los datos en la base de datos
+    $insertarDatos = "INSERT INTO citas_servicios(Nombre_Completo, Correo_Electronico, Servicios, Fecha_de_cita, Hora_de_cita, Mensaje) 
+                      VALUES ('$Nombre_Completo', '$Correo_Electronico', '$Servicios', '$Fecha_de_cita', '$Hora_de_cita', '$Mensaje')";
+
+    $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
+
+    if (!$ejecutarInsertar) {
+        echo "Error en la consulta SQL: " . mysqli_error($enlace);
+    } else {
+        echo "<h1>Registro exitoso!</h1>";
     }
-
-    // Procesar los datos del formulario
-    if (isset($_POST['submit'])) {
-        // Recoger los datos del formulario
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $service = $_POST['service'];
-        $date = $_POST['date'];
-        $time = $_POST['time'];
-        $message = isset($_POST['message']) ? $_POST['message'] : '';
-
-        // Insertar los datos en la base de datos
-        $query = "INSERT INTO citas_servicios(name, email, service, date, time, message) 
-                  VALUES ('$name', '$email', '$service', '$date', '$time', '$message')";
-
-        if ($conn->query($query) === TRUE) {
-            echo "<script>document.getElementById('response-message').innerHTML = '<p class=\"success-message\">¡Cita agendada exitosamente!</p>';</script>";
-        } else {
-            echo "<script>document.getElementById('response-message').innerHTML = '<p class=\"error-message\">Hubo un error al agendar la cita. Intenta nuevamente.</p>';</script>";
-        }
-    }
-
-    // Cerrar la conexión
-    $conn->close();
-    ?>
+}
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -119,18 +114,18 @@
 <body>
     <div class="container">
         <h1>Agendar Cita</h1>
-        <form id="appointment-form">
+        <form id="appointment-form" action="verCitas.php" method="POST">
             <div class="form-group">
-                <label for="name">Nombre Completo</label>
-                <input type="text" id="name" name="name" required>
+                <label for="Nombre_Completo">Nombre Completo</label>
+                <input type="text" id="Nombre_Completo" name="Nombre_Completo" required>
             </div>
             <div class="form-group">
-                <label for="email">Correo Electrónico</label>
-                <input type="email" id="email" name="email" required>
+                <label for="Correo_Electronico">Correo Electrónico</label>
+                <input type="email" id="Correo_Electronico" name="Correo_Electronico" required>
             </div>
             <div class="form-group">
-                <label for="service">Servicio</label>
-                <select id="service" name="service" required>
+                <label for="Servicios">Servicio</label>
+                <select id="Servicios" name="Servicios" required>
                     <option value="corte">Corte de cabello</option>
                     <option value="manicure">Manicura</option>
                     <option value="masajes">Masajes</option>
@@ -138,22 +133,19 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="date">Fecha de la cita</label>
-                <input type="date" id="date" name="date" required>
+                <label for="Fecha_de_cita">Fecha de la cita</label>
+                <input type="date" id="Fecha_de_cita" name="Fecha_de_cita" required>
             </div>
             <div class="form-group">
-                <label for="time">Hora de la cita</label>
-                <input type="time" id="time" name="time" required>
+                <label for="Hora_de_cita">Hora de la cita</label>
+                <input type="time" id="Hora_de_cita" name="Hora_de_cita" required>
             </div>
             <div class="form-group">
-                <label for="message">Mensaje (opcional)</label>
-                <textarea id="message" name="message"></textarea>
+                <label for="Mensaje">Mensaje (opcional)</label>
+                <textarea id="Mensaje" name="Mensaje"></textarea>
             </div>
-            <button type="submit">Agendar cita</button>
+            <button type="submit" name="agendar">Agendar cita</button>
         </form>
-        <div id="response-message"></div>
     </div>
-
-   
 </body>
 </html>
