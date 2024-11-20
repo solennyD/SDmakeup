@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-image:url(../proyecto-final_solennydeleon/imagen/cesta.jpg);
             margin: 0;
             padding: 0;
             display: flex;
