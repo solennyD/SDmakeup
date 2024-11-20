@@ -10,15 +10,15 @@
         echo "error conexion";
     }
 
-    if (isset($_POST['citas'])) 
+    if (isset($_POST['agendar'])) 
 {
     $id = rand(1,10);
-    $nombre = $_POST['nombre'];
-    $apellidos = $_POST['apellidos'];
-    $email = $_POST['email'];
-    $servicios = $_POST['servicios'];
-    $fecha = $_POST['fecha'];
-    $hora = $_POST['hora'];
+    $nombre = $_POST['Nombre'];
+    $apellidos = $_POST['Apellidos'];
+    $email = $_POST['Email'];
+    $servicios = $_POST['Servicio'];
+    $date = $_POST['Fecha'];
+    $time = $_POST['Hora'];
     
 
     $insertarDatos = "INSERT INTO citas VALUES ($id,
@@ -125,15 +125,15 @@
             </div>
             <div class="form-group">
                 <label for="apellido">Apellidos</label>
-                <input type="text" id="apellido" name="apellido" required>
+                <input type="text" id="Apellido" name="Apellido" required>
             </div>
             <div class="form-group">
                 <label for="email">Correo Electrónico</label>
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="service">Servicio</label>
-                <select id="service" name="service" required>
+                <label for="Servicio">Servicio</label>
+                <select id="Servicio" name="Servicio" required>
                     <option value="corte">Corte de cabello</option>
                     <option value="manicure">Manicura</option>
                     <option value="masajes">Masajes</option>
