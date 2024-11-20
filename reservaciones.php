@@ -118,7 +118,7 @@
 <body>
     <div class="container">
         <h1>Agendar Cita</h1>
-        
+        <form id="appointment-form" action="./verCitas.php" method="POST">
             <div class="form-group">
                 <label for="name">Nombre</label>
                 <input type="text" id="name" name="name" required>
