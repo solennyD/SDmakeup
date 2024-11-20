@@ -6,45 +6,44 @@
 
     $enlace = mysqli_connect($servidor, $usuario, $clave, $baseDatos);
 
-    if (!$enlace){
-        echo "error conexion";
+    if (!$enlace) {
+        echo "Error de conexión: " . mysqli_connect_error();
     }
 
-    if (isset($_POST['agendar'])) 
-{
-    $id = rand(1,10);
-    $nombre = $_POST['Nombre'];
-    $apellidos = $_POST['Apellidos'];
-    $email = $_POST['Email'];
-    $servicios = $_POST['Servicio'];
-    $date = $_POST['Fecha'];
-    $time = $_POST['Hora'];
-    
+    // Procesar el formulario
+    if (isset($_POST['citas'])) {
+        // Captura los datos del formulario
+        $nombre = $_POST['nombre'];
+        $apellidos = $_POST['apellidos'];
+        $email = $_POST['email'];
+        $servicio = $_POST['servicio'];
+        $fecha = $_POST['fecha'];
+        $hora = $_POST['hora'];
 
-    $insertarDatos = "INSERT INTO citas VALUES ($id,
-     '$nombre', 
-     '$apellidos',
-     '$email', 
-      $servicios, 
-      '$fecha', 
-      '$hora')";
-   
-   $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
+        // Insertar los datos en la bd
+        $insertarDatos = "INSERT INTO citas ( nombre, apellidos, email, servicio, fecha, hora)
+                          VALUES ('$nombre', '$apellidos', '$email', '$servicio', '$fecha', '$hora')";
 
-   if(!$ejecutarInsertar) {
-       echo "error en la linea de sql";
-   }
-}
+        $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
 
+        if (!$ejecutarInsertar) {
+            echo "Error en la consulta SQL: " . mysqli_error($enlace);
+        } else {
+            echo "<h1>Registro exitoso!</h1>";
+        }
+    }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- <link rel="stylesheet" href="css/style.css"> -->
     <title>Formulario de Citas - Estética</title>
-    <style>
+   <style>
         body {
             font-family: Arial, sans-serif;
             background-image:url(../proyecto-final_solennydeleon/imagen/cesta.jpg);
@@ -114,42 +113,44 @@
             text-align: center;
         }
     </style>
+   
 </head>
 <body>
     <div class="container">
         <h1>Agendar Cita</h1>
-        <form id="appointment-form" action="./verCitas.php" method="POST">
-            <div class="form-group">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" required>
+
+        <form action="" method="POST" style="width: 800px; margin: auto;">
+                <div class="form-group"> 
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
             </div>
-            <div class="form-group">
-                <label for="apellido">Apellidos</label>
-                <input type="text" id="Apellido" name="Apellido" required>
+                <div class="form-group"> 
+                <label for="apellidos">Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos" required>
             </div>
-            <div class="form-group">
+                <div class="form-group">
                 <label for="email">Correo Electrónico</label>
                 <input type="email" id="email" name="email" required>
             </div>
-            <div class="form-group">
-                <label for="Servicio">Servicio</label>
-                <select id="Servicio" name="Servicio" required>
+                <div class="form-group"> 
+                <label for="servicio">Servicio</label>
+                <select id="servicio" name="servicio" required>
                     <option value="corte">Corte de cabello</option>
                     <option value="manicure">Manicura</option>
                     <option value="masajes">Masajes</option>
                     <option value="peinado">Peinado</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="date">Fecha de la cita</label>
-                <input type="date" id="date" name="date" required>
+                <div class="form-group">
+                <label for="fecha">Fecha de la cita</label>
+                <input type="date" id="fecha" name="fecha" required>
             </div>
-            <div class="form-group">
-                <label for="time">Hora de la cita</label>
-                <input type="time" id="time" name="time" required>
+                <div class="form-group">
+                <label for="hora">Hora de la cita</label>
+                <input type="time" id="hora" name="hora" required>
             </div>
            
-            <button type="submit" name="agendar">Agendar cita</button>
+            <button type="submit" name="citas">Agendar cita</button>
         </form>
     </div>
 </body>

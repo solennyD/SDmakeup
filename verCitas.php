@@ -125,14 +125,14 @@ $resultado = mysqli_query($enlace, $query);
         // Ver las citas almacenadas en la base de datos
         if (mysqli_num_rows($resultado) > 0) {
             echo "<table>";
-            echo "<tr><th>ID</th><th>Nombre</th><th>Apellidos</th><th>Email</th><th>Servicio</th><th>Fecha</th><th>Hora</th><th>Acciones</th></tr>";
+            echo "<tr><th>ID</th><th>nombre</th><th>apellidos</th><th>email</th><th>servicio</th><th>fecha</th><th>hora</th><th>Acciones</th></tr>";
             while ($row = mysqli_fetch_assoc($resultado)) {
                 echo "<tr>";
                 echo "<td>" . $row['id'] . "</td>";
                 echo "<td>" . $row['nombre'] . "</td>";
-                echo "<td>" . $row['apellidos'] . "</td>";
+                echo "<td>" . $row['apellido'] . "</td>";
                 echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['servicios'] . "</td>";
+                echo "<td>" . $row['servicio'] . "</td>";
                 echo "<td>" . $row['fecha'] . "</td>";
                 echo "<td>" . $row['hora'] . "</td>";
                 echo "<td><a href='verCitas.php?eliminar=" . $row['id'] . "'><button>Eliminar</button></a> 
