@@ -10,25 +10,24 @@
         echo "error conexion";
     }
 
-    if (isset($_POST['registrarse'])) 
+    if (isset($_POST['citas'])) 
 {
     $id = rand(1,10);
     $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
+    $apellidos = $_POST['apellidos'];
     $email = $_POST['email'];
-    $edad = $_POST['edad'];
-    $telefono = $_POST['telefono'];
-    $cedula = $_POST['cedula'];
-    $genero = $_POST['genero'];
+    $servicios = $_POST['servicios'];
+    $fecha = $_POST['fecha'];
+    $hora = $_POST['hora'];
+    
 
-    $insertarDatos = "INSERT INTO registrarse VALUES ($id,
+    $insertarDatos = "INSERT INTO citas VALUES ($id,
      '$nombre', 
-     '$apellido',
+     '$apellidos',
      '$email', 
-      $edad, 
-      '$telefono', 
-      '$cedula', 
-      '$genero')";
+      $servicios, 
+      '$fecha', 
+      '$hora')";
    
    $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
 
@@ -119,10 +118,14 @@
 <body>
     <div class="container">
         <h1>Agendar Cita</h1>
-        <form id="appointment-form" action="./verCitas.php" method="POST">
+        
             <div class="form-group">
-                <label for="name">Nombre Completo</label>
+                <label for="name">Nombre</label>
                 <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellidos</label>
+                <input type="text" id="apellido" name="apellido" required>
             </div>
             <div class="form-group">
                 <label for="email">Correo Electrónico</label>
@@ -145,10 +148,7 @@
                 <label for="time">Hora de la cita</label>
                 <input type="time" id="time" name="time" required>
             </div>
-            <div class="form-group">
-                <label for="message">Mensaje (opcional)</label>
-                <textarea id="message" name="message"></textarea>
-            </div>
+           
             <button type="submit" name="agendar">Agendar cita</button>
         </form>
     </div>
