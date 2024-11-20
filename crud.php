@@ -9,23 +9,17 @@ $baseDatos = "sdmakeup";
 
 $conexion = mysqli_connect("localhost", "root", "", "sdmakeup");
 
+session_start(); // Iniciar sesión para acceder a las variables de sesión
 
-
-
-?>
-
-<?php
-session_start();
-
-// Verificar si el usuario está autenticado y es un administrador
-if (!isset($_SESSION["administrador"])) {
-    // Si no está autenticado como administrador, redirigir al usuario al inicio de sesión del administrador
-    header("Location: login_administrador.php");
-    exit(); // Detener la ejecución del script después de redirigir
+// Verifica si el usuario está logueado
+if (isset($_SESSION['usuario'])) {
+    // luego de confirmar el nombre del user, se muestra
+    echo "<h1 class='bienvenido'>Bienvenido, " . $_SESSION['usuario'] . "</h1>";
+} else {
+    // Si no está logueado, redirigimos al login
+    header("Location: login.php");
+    exit(); // Asegura que no se ejecute el código posterior
 }
-
-// Conexión a la base de datos
-$conexion = new mysqli("localhost", "root", "", "mediccare");
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
@@ -57,6 +51,8 @@ if (isset($_GET['eliminar_cedula_pasaporte'])) {
 $sql = "SELECT nombre, apellido, cedula_pasaporte, correo, fecha_nacimiento, telefono FROM usuario";
 $resultado = $conexion->query($sql);
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

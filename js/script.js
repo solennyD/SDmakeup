@@ -113,6 +113,8 @@ const showHTML = () => {
 
 		rowProduct.append(containerProduct);
 
+		//para conseguir el total de los productos
+
 		total =
 			total + parseInt(product.quantity * product.price.slice(1));
 		totalOfProducts = totalOfProducts + product.quantity;
