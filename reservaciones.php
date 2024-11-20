@@ -11,7 +11,7 @@
     }
 
     // Procesar el formulario
-    if (isset($_POST['citas'])) {
+    if (isset($_POST['agendar'])) {
         // Captura los datos del formulario
         $nombre = $_POST['nombre'];
         $apellidos = $_POST['apellidos'];
@@ -29,7 +29,7 @@
         if (!$ejecutarInsertar) {
             echo "Error en la consulta SQL: " . mysqli_error($enlace);
         } else {
-            echo "<h1>Registro exitoso!</h1>";
+            echo "<h4>Registro exitoso!</h4>";
         }
     }
 ?>
@@ -75,12 +75,13 @@
             display: block;
         }
         input, select, textarea {
-            width: 100%;
+            width: 50%;
             padding: 10px;
             margin: 10px 0 20px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
+            
         }
         button {
             background-color: #007bff;
@@ -150,7 +151,7 @@
                 <input type="time" id="hora" name="hora" required>
             </div>
            
-            <button type="submit" name="citas">Agendar cita</button>
+            <button type="submit" name="agendar">Agendar cita</button>
         </form>
     </div>
 </body>
