@@ -154,32 +154,6 @@
         <div id="response-message"></div>
     </div>
 
-    <script>
-        const form = document.getElementById('appointment-form');
-        const responseMessage = document.getElementById('response-message');
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const formData = new FormData(form);
-
-            fetch('process_appointment.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    responseMessage.innerHTML = '<p class="success-message">¡Cita agendada exitosamente!</p>';
-                    form.reset();
-                } else {
-                    responseMessage.innerHTML = '<p class="error-message">Hubo un error al agendar la cita. Intenta nuevamente.</p>';
-                }
-            })
-            .catch(error => {
-                responseMessage.innerHTML = '<p class="error-message">Error de red. Intenta nuevamente.</p>';
-            });
-        });
-    </script>
+   
 </body>
 </html>

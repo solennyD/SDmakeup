@@ -1,5 +1,5 @@
 <?php
-//Archivo donde me aseguro la coneccion con la bd de la cesta
+//Archivo donde me aseguro la conexion con la bd de la cesta
 $conexion=mysqli_connect("localhost","root","","sdmakeup");
 
 
