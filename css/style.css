@@ -258,6 +258,7 @@ button[type="reset"]:hover {
   background-color: rgba(188, 186, 186, 0.373);
   border: 2px solid #d4af37; 
   box-shadow: 0 0 8px rgba(15, 14, 14, 0.6);  
+  
 }
 
 footer {
