@@ -1,0 +1,81 @@
+<?php
+$servidor = "localhost";
+$usuario = "root";
+$clave = "";
+$baseDatos = "sdmakeup";
+
+$enlace = mysqli_connect($servidor, $usuario, $clave, $baseDatos);
+
+if (!$enlace) {
+    die("Error de conexión: " . mysqli_connect_error());
+}
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    // Obtener los datos de la cita
+    $sql = "SELECT * FROM citas WHERE id = $id";
+    $result = mysqli_query($enlace, $sql);
+    $cita = mysqli_fetch_assoc($result);
+    
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $nombre = $_POST['nombre'];
+        $apellidos = $_POST['apellidos'];
+        $email = $_POST['email'];
+        $servicios = $_POST['servicios'];
+        $fecha = $_POST['fecha'];
+        $hora = $_POST['hora'];
+        
+        $updateSql = "UPDATE citas SET nombre='$nombre', apellidos='$apellidos', email='$email', servicios='$servicios', fecha='$fecha', hora='$hora' WHERE id=$id";
+        
+        if (mysqli_query($enlace, $updateSql)) {
+            header("Location: ver_citas.php"); // Redirigir a la página de visualización de citas
+        } else {
+            echo "Error al actualizar la cita: " . mysqli_error($enlace);
+        }
+    }
+} else {
+    echo "ID no proporcionado.";
+    exit;
+}
+
+mysqli_close($enlace);
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cita</title>
+</head>
+<body>
+    <h1>Editar Cita</h1>
+    <form method="POST" action="editar_cita.php?id=<?php echo $id; ?>">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="<?php echo $cita['nombre']; ?>" required><br>
+        
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" value="<?php echo $cita['apellidos']; ?>" required><br>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" value="<?php echo $cita['email']; ?>" required><br>
+
+        <label for="servicios">Servicio:</label>
+        <select name="servicios" id="servicios" required>
+            <option value="corte" <?php echo $cita['servicios'] == 'corte' ? 'selected' : ''; ?>>Corte de cabello</option>
+            <option value="manicure" <?php echo $cita['servicios'] == 'manicure' ? 'selected' : ''; ?>>Manicura</option>
+            <option value="masajes" <?php echo $cita['servicios'] == 'masajes' ? 'selected' : ''; ?>>Masajes</option>
+            <option value="peinado" <?php echo $cita['servicios'] == 'peinado' ? 'selected' : ''; ?>>Peinado</option>
+        </select><br>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" value="<?php echo $cita['fecha']; ?>" required><br>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" value="<?php echo $cita['hora']; ?>" required><br>
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</body>
+</html>
