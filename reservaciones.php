@@ -43,77 +43,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <title>Formulario de Citas - Estética</title>
-   <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image:url(../proyecto-final_solennydeleon/imagen/cesta.jpg);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: rgba(203, 202, 202, 0.444);  
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px;
-            border: 2px solid #d4af37; 
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        label {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 5px;
-            display: block;
-        }
-        input, select, textarea {
-            width: 50%;
-            padding: 10px;
-            margin: 10px 0 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-            
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group textarea {
-            height: 100px;
-            resize: none;
-        }
-        .success-message {
-            margin-top: 20px;
-            color: green;
-            text-align: center;
-        }
-        .error-message {
-            margin-top: 20px;
-            color: red;
-            text-align: center;
-        }
-    </style>
+
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url(../proyecto-final_solennydeleon/imagen/cesta.jpg);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background-color: rgba(203, 202, 202, 0.444);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        border: 2px solid #d4af37;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra los elementos dentro del contenedor */
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 5px;
+        display: block;
+        text-align: left;
+        width: 100%;
+        
+    }
+
+    input, select, textarea {
+        width: 70%; /* Aumenté el ancho al 80% para que se vean mejor centrados */
+        padding: 10px;
+        margin: 10px 0 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+       
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        width: 100%; /* Asegura que las agrupaciones de campos tomen el 100% del ancho */
+    }
+
+    .form-group textarea {
+        height: 100px;
+        resize: none;
+    }
+
+</style>
+
    
 </head>
 <body>
