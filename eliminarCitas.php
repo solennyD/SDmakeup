@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
     $deleteSql = "DELETE FROM citas WHERE id = $id";
 
     if (mysqli_query($enlace, $deleteSql)) {
-        header("Location: ver_citas.php"); // Redirigir a la página de visualización de citas
+        header("Location: verCitas.php"); // Redirigir a la página de visualización de citas
     } else {
         echo "Error al eliminar la cita: " . mysqli_error($enlace);
     }

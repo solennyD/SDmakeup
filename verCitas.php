@@ -24,7 +24,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row['nombre'] . "</td>";
         echo "<td>" . $row['apellidos'] . "</td>";
         echo "<td>" . $row['email'] . "</td>";
-        echo "<td>" . $row['servicios'] . "</td>";
+        echo "<td>" . $row['servicio'] . "</td>";
         echo "<td>" . $row['fecha'] . "</td>";
         echo "<td>" . $row['hora'] . "</td>";
         echo "<td><a href='editarCitas.php?id=" . $row['id'] . "'>Editar</a> | 
