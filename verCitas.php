@@ -27,8 +27,8 @@ if (mysqli_num_rows($result) > 0) {
         echo "<td>" . $row['servicios'] . "</td>";
         echo "<td>" . $row['fecha'] . "</td>";
         echo "<td>" . $row['hora'] . "</td>";
-        echo "<td><a href='editar_cita.php?id=" . $row['id'] . "'>Editar</a> | 
-                  <a href='eliminar_cita.php?id=" . $row['id'] . "' onclick='return confirm(\"¿Estás seguro de que quieres eliminar esta cita?\");'>Eliminar</a></td>";
+        echo "<td><a href='editarCitas.php?id=" . $row['id'] . "'>Editar</a> | 
+                  <a href='eliminarCitas.php?id=" . $row['id'] . "' onclick='return confirm(\"¿Estás seguro de que quieres eliminar esta cita?\");'>Eliminar</a></td>";
         echo "</tr>";
     }
     echo "</table>";
