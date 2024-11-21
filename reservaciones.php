@@ -124,8 +124,10 @@
    
 </head>
 <body>
+   
     <div class="container">
         <h1>Agendar Cita</h1>
+        <a href="./index.html">Atras</a>
 
         <form action="" method="POST" style="width: 800px; margin: auto;">
                 <div class="form-group"> 
@@ -159,6 +161,7 @@
             </div>
            
             <button type="submit" name="agendar">Agendar cita</button>
+            <button><a href="./verCitas.php">citas</a></button>
         </form>
     </div>
 </body>
