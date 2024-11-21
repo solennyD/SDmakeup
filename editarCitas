@@ -26,10 +26,10 @@ if (isset($_GET['id'])) {
         $fecha = $_POST['fecha'];
         $hora = $_POST['hora'];
         
-        $updateSql = "UPDATE citas SET nombre='$nombre', apellidos='$apellidos', email='$email', servicios='$servicios', fecha='$fecha', hora='$hora' WHERE id=$id";
+        $updateSql = "UPDATE citas SET nombre='$nombre', apellidos='$apellidos', email='$email', servicio='$servicio', fecha='$fecha', hora='$hora' WHERE id=$id";
         
         if (mysqli_query($enlace, $updateSql)) {
-            header("Location: ver_citas.php"); // Redirigir a la página de visualización de citas
+            header("Location: verCitas.php"); // Redirigir a la página de visualización de citas
         } else {
             echo "Error al actualizar la cita: " . mysqli_error($enlace);
         }
@@ -51,7 +51,7 @@ mysqli_close($enlace);
 </head>
 <body>
     <h1>Editar Cita</h1>
-    <form method="POST" action="editar_cita.php?id=<?php echo $id; ?>">
+    <form method="POST" action="editarCita.php?id=<?php echo $id; ?>">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" value="<?php echo $cita['nombre']; ?>" required><br>
         
@@ -62,11 +62,11 @@ mysqli_close($enlace);
         <input type="email" id="email" name="email" value="<?php echo $cita['email']; ?>" required><br>
 
         <label for="servicios">Servicio:</label>
-        <select name="servicios" id="servicios" required>
-            <option value="corte" <?php echo $cita['servicios'] == 'corte' ? 'selected' : ''; ?>>Corte de cabello</option>
-            <option value="manicure" <?php echo $cita['servicios'] == 'manicure' ? 'selected' : ''; ?>>Manicura</option>
-            <option value="masajes" <?php echo $cita['servicios'] == 'masajes' ? 'selected' : ''; ?>>Masajes</option>
-            <option value="peinado" <?php echo $cita['servicios'] == 'peinado' ? 'selected' : ''; ?>>Peinado</option>
+        <select name="servicio" id="servicio" required>
+            <option value="corte" <?php echo $cita['servicio'] == 'corte' ? 'selected' : ''; ?>>Corte de cabello</option>
+            <option value="manicure" <?php echo $cita['servicio'] == 'manicure' ? 'selected' : ''; ?>>Manicura</option>
+            <option value="masajes" <?php echo $cita['servicio'] == 'masajes' ? 'selected' : ''; ?>>Masajes</option>
+            <option value="peinado" <?php echo $cita['servicio'] == 'peinado' ? 'selected' : ''; ?>>Peinado</option>
         </select><br>
 
         <label for="fecha">Fecha:</label>
