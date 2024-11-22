@@ -36,22 +36,6 @@ if(isset($_GET['ID'])) {
         $mensaje = "Error al ejecutar la consulta: " . $stmt->error;
     }
 
-    // Cerrar la declaración
-    $stmt->close();
-    
-    // Cerrar conexión
-    $conexion->close();
-
-    // Mostrar mensaje
-    echo $mensaje;
-
-    // Redireccionar después de 3 segundos
-    header("refresh:3;url=eliminarCitas.php");
-    exit();
-} else {
-    // Si no se proporcionó un ID, redireccionar a la página de verCitas.php
-    header("Location: verCitas.php");
-    exit();
 }
 
 ?>
