@@ -1,4 +1,4 @@
-<?php
+<?php 
     $servidor = "localhost";
     $usuario = "root";
     $clave = "";
@@ -17,12 +17,12 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        // Cifrar la contraseña
+        // Cifrar la contraseña antes de guardarla
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        // Insertar los datos en la base de datos
+        // Insertar los datos en la base de datos con la contraseña cifrada
         $insertarDatos = "INSERT INTO user (usuario, email, password)
-                          VALUES ('$usuario', '$email', '$hashed_password')";  // Usar la contraseña cifrada
+                          VALUES ('$usuario', '$email', '$hashed_password')";
 
         $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
 
