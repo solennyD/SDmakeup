@@ -17,9 +17,12 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        // Insertar los datos en la bd
+        // Cifrar la contraseña
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        // Insertar los datos en la base de datos
         $insertarDatos = "INSERT INTO user (usuario, email, password)
-                          VALUES ('$usuario', '$email', '$password')";
+                          VALUES ('$usuario', '$email', '$hashed_password')";  // Usar la contraseña cifrada
 
         $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
 
@@ -30,6 +33,7 @@
         }
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
