@@ -3,7 +3,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ver Historial Médico</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,16 +23,25 @@
             margin-top: 50px;
         }
         table {
-            width: 80%;
+            width: 85%;
             margin: 20px auto;
             border-collapse: collapse;
+            display: table;
+            border-collapse: separate;
+            box-sizing: border-box;
+            text-indent: initial;
+            unicode-bidi: isolate;
+            border-spacing: 15px;
+            border-color: gray;
+
         }
+
         th, td {
             padding: 8px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 2px solid #d4af37;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #d4af37;
         }
         .action-buttons a {
             margin: 0 10px;
@@ -46,13 +62,30 @@
         .delete-button:hover {
             background-color: #c82333;
         }
+
+        button{
+        background-color: #007bff;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+        margin-right: 74%;
+        }
+        a{
+        color: white; /* Cambia el color del texto a blanco */
+        text-decoration: none; /* Quita el subrayado */
+        }
+        a:hover {
+       text-decoration: underline; /* Opcional: Agrega subrayado al pasar el mouse */
+       }
     </style>
 </head>
 <body>
-    <header>
-    <a href="./reservaciones.php">Atras</a>
-    </header>
-    <h2>Citas Agendadas</h2>
+   
+    <h1>Citas Agendadas</h1>
 
     <table>
         <thead>
@@ -99,9 +132,9 @@
                     // Botón de Editar
                     echo "<a 
                     href='editarCitas.php?id=".$filas['ID']."'class='edit-button'>EDITAR</a>";
-                    
+
                     // Botón de Eliminar
-                    echo "<a href='verCitas.php=" . $filas["ID"] . "' class='delete-button' onclick='return confirm(\"¿Estás seguro de eliminar esta cita?\")'>Eliminar</a>";
+                    echo "<a href='verCitas.php=" . $filas["ID"] . "' class='delete-button' onclick='return confirm(\"¿Estás seguro de eliminar esta cita?\")'>ELIMINAR</a>";
                     echo "</td>";
                     echo "</tr>";
                 }
@@ -114,5 +147,8 @@
             ?>
         </tbody>
     </table>
+    
+                <button> <a href="./reservaciones.php">Regresar</a></button>
+            
 </body>
 </html>

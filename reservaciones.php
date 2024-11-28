@@ -96,17 +96,19 @@
     }
 
     button {
-        background-color: #007bff;
+        background-color: darkgoldenrod;
         color: white;
-        padding: 12px 20px;
+        padding: 12px 100px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
+        margin-left: 20%;
+        position:relative;
     }
 
     button:hover {
-        background-color: #0056b3;
+        background-color: green;
     }
 
     .form-group {
@@ -119,6 +121,35 @@
         resize: none;
     }
 
+    .cita-button{
+        background-color: #007bff;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+        margin: 3%;
+        }
+        .regre{
+        background-color: darkgoldenrod;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+        margin-left: 5px;
+        }
+        a{
+        color: white; /* Cambia el color del texto a blanco */
+        text-decoration: none; /* Quita el subrayado */
+        }
+        a:hover {
+       text-decoration: underline; /* Opcional: Agrega subrayado al pasar el mouse */
+       }
+
 </style>
 
    
@@ -127,7 +158,7 @@
    
     <div class="container">
         <h1>Agendar Cita</h1>
-        <a href="./index.html">Atras</a>
+        
 
         <form action="" method="POST" style="width: 800px; margin: auto;">
                 <div class="form-group"> 
@@ -160,8 +191,9 @@
                 <input type="time" id="hora" name="hora" required>
             </div>
            
-            <button type="submit" name="agendar">Agendar cita</button>
-            <button><a href="./verCitas.php">citas</a></button>
+            <button type="submit" name="agendar">AGENDAR CITA</button><br>
+            <button class="cita-button"><a href="./verCitas.php">Citas</a></button>
+            <button class="regre"> <a href="./index.html">Regresar</a></button>
         </form>
     </div>
 </body>
