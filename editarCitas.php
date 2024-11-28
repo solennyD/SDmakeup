@@ -17,12 +17,29 @@ include('bd.php');
     // Procesar el formulario
     if (isset($_POST['enviar'])) {
         // aqui entra cuando se presiona el boton de enviar
+        $id = $_POST['id'];
         $nombre = $_POST['nombre'];
         $apellidos = $_POST['apellidos'];
         $email = $_POST['email'];
         $servicio = $_POST['servicio'];
         $fecha = $_POST['fecha'];
         $hora = $_POST['hora'];
+
+        $sql = "UPDATE citas SET  nombre='".$nombre."', apellidos='".$apellidos."', email= '".$email."', servicio= '".$servicio."', fecha= '".$fecha."', hora='".$hora."' WHERE id='".$id."'";
+        $resultado=mysqli_query($conexion, $sql);
+
+        if($resultado){
+            echo "<script language='JavaScript'>
+            alert('Los datos se actualizaron correctamente');
+            location.assign('verCitas.php');
+            </script>";
+
+        }else{
+            echo "<script language='JavaScript'>
+            alert('Los datos no se actualizaron correctamente');
+            location.assign('verCitas.php');
+            </script>";
+        }
 
     }else{
         // aqui entra si no ha presionado el boton de enviar
@@ -151,8 +168,8 @@ include('bd.php');
         <h1>Editar Citas</h1>
         <form action="<?=$_SERVER ['PHP_SELF']?>" method="POST" style="width: 800px; margin: auto;">
                 <div class="form-group"> 
-                <label for="Nombre">Nombre</label>
-                <input type="text" id="Nombre" name="Nombre" required
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required
                 value="<?php echo $nombre;?>"><br>
             </div>
                 <div class="form-group"> 
@@ -188,8 +205,8 @@ include('bd.php');
             <input type="hidden" name="id"
             value="<?php echo $id;?>">
            
-            <input type="submit" name="enviar" value="Actualizar">
-            <button><a href="verCitas.php">Regresar</a></button>
+            <input type="submit" name="enviar" value="Actualizar" style="width: 20%;">
+            <button style="width: 20%;"><a href="verCitas.php">Regresar</a></button>
         </form>
     </div>
 </body>
