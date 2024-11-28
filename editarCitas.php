@@ -61,17 +61,6 @@ include('bd.php');
 
     }
 
-     /*   // Actualizar los datos en la base de datos
-    $sql = "UPDATE citas SET  nombre='$nombre', apellidos='$apellidos', email='$email', servicio='$servicio', fecha='$fecha', hora='$hora' WHERE id='$id'";
-
-        $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
-
-        if (!$ejecutarInsertar) {
-            echo "Error al actualizar SQL: " . mysqli_error($enlace);
-        } else {
-            echo "<h4>actualizacion exitosa!</h4>";
-        }
-    }*/
 ?>
 
 
@@ -164,7 +153,6 @@ include('bd.php');
 </head>
 <body>
     <div class="container">
-        <a href="./index.html">Atras</a>
         <h1>Editar Citas</h1>
         <form action="<?=$_SERVER ['PHP_SELF']?>" method="POST" style="width: 800px; margin: auto;">
                 <div class="form-group"> 
@@ -206,7 +194,7 @@ include('bd.php');
             value="<?php echo $id;?>">
            
             <input type="submit" name="enviar" value="Actualizar" style="width: 20%;">
-            <button style="width: 20%;"><a href="verCitas.php">Regresar</a></button>
+            <button style="width: 20%;"> <a href="./verCitas.php" style="margin-right: 100%;">Regresar</a></button>
         </form>
     </div>
 </body>
