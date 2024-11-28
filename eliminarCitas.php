@@ -1,41 +1,48 @@
 <?php
-// Verificar si se ha enviado un ID para eliminar
-if(isset($_GET['ID'])) {
+session_start();
+
+// Verificar si el usuario está autenticado y es un administrador
+if (!isset($_SESSION["user"])) {
+    // Si no está autenticado como administrador, redirigir al usuario al inicio de sesión del administrador
+    header("Location: login.php");
+    exit(); // Detener la ejecución del script después de redirigir
+}
+
+// Verificar si se recibió un ID de dependiente para eliminar
+if (isset($_GET['id'])) {
     // Conexión a la base de datos
     $conexion = new mysqli("localhost", "root", "", "sdmakeup");
 
-    // Verificar si hay errores de conexión
     if ($conexion->connect_error) {
         die("Error de conexión: " . $conexion->connect_error);
     }
 
-    // Obtener el ID del centro a eliminar
+    // Obtener el ID del dependiente a eliminar
     $id = $_GET['ID'];
 
-    // Query para eliminar el centro
+    // Query para eliminar el dependiente
     $sql = "DELETE FROM citas WHERE ID = ?";
-    $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
+    $consulta = $conexion->prepare($sql);
+    $consulta->bind_param("i", $id);
+    $consulta->execute();
 
-    // Verificar si la preparación de la consulta fue exitosa
-    if ($stmt === false) {
-        die('Error al preparar la consulta: ' . $conexion->error);
-    }
-
-    $stmt->bind_param("i", $id);
-
-    // Ejecutar la consulta
-    if ($stmt->execute()) {
-        if ($stmt->affected_rows > 0) {
-            $mensaje = "La cita ha sido eliminada correctamente.";
-        } else {
-            $mensaje = "No se pudo eliminar la cita. Puede que no exista.";
-        }
+    // Verificar si se eliminó correctamente la cita
+    if ($consulta->affected_rows > 0) {
+        $_SESSION['mensaje'] = '<div class="alert alert-success">La cita se ha eliminado correctamente.</div>';
     } else {
-        $mensaje = "Error al ejecutar la consulta: " . $stmt->error;
+        $_SESSION['mensaje'] = '<div class="alert alert-danger">No se pudo eliminar la cita.</div>';
     }
 
-}
+    // Cerrar conexión y liberar recursos
+    $consulta->close();
+    $conexion->close();
 
+    // Redireccionar después de 3 segundos
+    header("refresh:3;url=eliminarCitas.php");
+    exit();
+} else {
+    // Si no se recibió un ID de dependiente, redirigir a la página de eliminardependientes.php
+    header("Location: eliminarCitas.php");
+    exit();
+}
 ?>
