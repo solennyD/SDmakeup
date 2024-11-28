@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -78,24 +79,29 @@
 
             // Consulta SQL para obtener las citas
             $sql = "SELECT ID, Nombre, Apellidos, Email, Servicio, Fecha, Hora FROM citas";
-            $result = $conexion->query($sql);
+            $resultado = $conexion->query($sql);
+
+            $filas=mysqli_fetch_assoc($resultado);
 
             // Mostrar los resultados en la tabla
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
+            if ($resultado->num_rows> 0) {
+                while($filas = $resultado->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $row["ID"] . "</td>";
-                    echo "<td>" . $row["Nombre"] . "</td>";
-                    echo "<td>" . $row["Apellidos"] . "</td>";
-                    echo "<td>" . $row["Email"] . "</td>";
-                    echo "<td>" . $row["Servicio"] . "</td>";
-                    echo "<td>" . $row["Fecha"] . "</td>";
-                    echo "<td>" . $row["Hora"] . "</td>";
+                    echo "<td>" . $filas["ID"] . "</td>";
+                    echo "<td>" . $filas["Nombre"] . "</td>";
+                    echo "<td>" . $filas["Apellidos"] . "</td>";
+                    echo "<td>" . $filas["Email"] . "</td>";
+                    echo "<td>" . $filas["Servicio"] . "</td>";
+                    echo "<td>" . $filas["Fecha"] . "</td>";
+                    echo "<td>" . $filas["Hora"] . "</td>";
                     echo "<td class='action-buttons'>";
+
                     // Botón de Editar
-                    echo "<a href='editarCitas.php=" . $row["ID"] . "' class='edit-button'>Editar</a>";
+                    echo "<a 
+                    href='editarCitas.php?id=".$filas['ID']."'class='edit-button'>EDITAR</a>";
+                    
                     // Botón de Eliminar
-                    echo "<a href='?eliminarCitas.php=" . $row["ID"] . "' class='delete-button' onclick='return confirm(\"¿Estás seguro de eliminar esta cita?\")'>Eliminar</a>";
+                    echo "<a href='verCitas.php=" . $filas["ID"] . "' class='delete-button' onclick='return confirm(\"¿Estás seguro de eliminar esta cita?\")'>Eliminar</a>";
                     echo "</td>";
                     echo "</tr>";
                 }

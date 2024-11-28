@@ -1,15 +1,8 @@
 <?php
 session_start();
 
-// Verificar si el usuario está autenticado y es un administrador
-if (!isset($_SESSION["user"])) {
-    // Si no está autenticado como administrador, redirigir al usuario al inicio de sesión del administrador
-    header("Location: login.php");
-    exit(); // Detener la ejecución del script después de redirigir
-}
-
 // Verificar si se recibió un ID de dependiente para eliminar
-if (isset($_GET['id'])) {
+if (isset($_GET['ID'])) {
     // Conexión a la base de datos
     $conexion = new mysqli("localhost", "root", "", "sdmakeup");
 
@@ -37,12 +30,10 @@ if (isset($_GET['id'])) {
     $consulta->close();
     $conexion->close();
 
-    // Redireccionar después de 3 segundos
-    header("refresh:3;url=eliminarCitas.php");
     exit();
 } else {
     // Si no se recibió un ID de dependiente, redirigir a la página de eliminardependientes.php
-    header("Location: eliminarCitas.php");
+    echo "No se pudo eliminar la cita";
     exit();
 }
 ?>

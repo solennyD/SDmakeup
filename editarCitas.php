@@ -1,64 +1,62 @@
 <?php
-session_start();
-
-//evita que se el navegador me guarde cachet
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Pragma: no-cache");
-//header("Expires: 0");  // Fecha en el pasado
-
-// Conexión a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mediccare";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
-// Si se envió el formulario de actualización
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recibir datos del formulario
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-   // $cedula = $_POST['cedula'];
-    $puesto = $_POST['puesto'];
-    $fecha_nacimiento = $_POST['fecha_nacimiento'];
-    $correo_electronico = $_POST['correo'];
-    $contrasena = $_POST['contrasena']; 
-  
-
-    // Actualizar los datos en la base de datos
-    $sql = "UPDATE administrador SET nombre='$nombre', apellido='$apellido', puesto='$puesto' /*, cedula='$cedula'*/, fecha_nacimiento='$fecha_nacimiento', Correo_Electronico='$correo_electronico', contrasena='$contrasena' WHERE cedula='$cedula'";
-
-
-    if ($conn->query($sql) === TRUE) {
-        echo "¡Perfil actualizado correctamente!";
-    } else {
-        echo "Error al actualizar el perfil: " . $conn->error;
-    }
-} else {
-    // Obtener los datos del usuario de la base de datos
-    $sql = "SELECT * FROM administrador WHERE cedula='$cedula'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $nombre = $row["Nombre"];
-        $apellido = $row["Apellido"];
-       // $cedula = $row["Cedula"];
-        $puesto = $row["Puesto"];
-        $fecha_nacimiento = $row["Fecha_Nacimiento"];
-        $correo_electronico = $row["Correo_Electronico"];
-        $contrasena = $row["Contrasena"];
-        
-    }else{
-        echo "No se encontró el usuario";
-    }
-}
-$conn->close();
+include('bd.php');
 ?>
+<?php
+    $servidor = "localhost";
+    $usuario = "root";
+    $clave = "";
+    $baseDatos = "sdmakeup";
+
+    $enlace = mysqli_connect($servidor, $usuario, $clave, $baseDatos);
+
+    if (!$enlace) {
+        echo "Error de conexión: " . mysqli_connect_error();
+    }
+
+
+    // Procesar el formulario
+    if (isset($_POST['enviar'])) {
+        // aqui entra cuando se presiona el boton de enviar
+        $nombre = $_POST['nombre'];
+        $apellidos = $_POST['apellidos'];
+        $email = $_POST['email'];
+        $servicio = $_POST['servicio'];
+        $fecha = $_POST['fecha'];
+        $hora = $_POST['hora'];
+
+    }else{
+        // aqui entra si no ha presionado el boton de enviar
+        $id=$_GET['id'];
+        $sql="SELECT * from citas where id='".$id."'"; //mandar a traer el registro
+        $resultado=mysqli_query($conexion, $sql);
+      //  $sql = "SELECT ID, Nombre, Apellidos, Email, Servicio, Fecha, Hora FROM citas";
+          //  $resultado = $conexion->query($sql);
+
+        $filas=mysqli_fetch_assoc($resultado);
+        $nombre = $filas["Nombre"];
+        $apellidos = $filas["Apellidos"];
+        $email = $filas["Email"];
+        $servicio = $filas["Servicio"];
+        $fecha = $filas["Fecha"];
+        $hora = $filas["Hora"];
+
+        mysqli_close($conexion);
+
+    }
+
+     /*   // Actualizar los datos en la base de datos
+    $sql = "UPDATE citas SET  nombre='$nombre', apellidos='$apellidos', email='$email', servicio='$servicio', fecha='$fecha', hora='$hora' WHERE id='$id'";
+
+        $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
+
+        if (!$ejecutarInsertar) {
+            echo "Error al actualizar SQL: " . mysqli_error($enlace);
+        } else {
+            echo "<h4>actualizacion exitosa!</h4>";
+        }
+    }*/
+?>
+
 
 
 <!DOCTYPE html>
@@ -67,7 +65,6 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <title>Formulario de Citas - Estética</title>
 
     <style>
     body {
@@ -149,86 +146,56 @@ $conn->close();
    
 </head>
 <body>
-   
-<div class="container">
-        <h1>Editar citas</h1>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-            <label for="Nombre">Nombre:</label>
-            <input type="text" id="Nombre" name="Nombre" value="<?php echo $nombre; ?>">
-            <label for="Apellidos">Apellido:</label>
-            <input type="text" id="Apellidos" name="Apellidos" value="<?php echo $apellidos; ?>">
-            <label for="Email">Correo Electronico:</label>
-            <input type="Email" id="Email" name="Email" value="<?php echo $email; ?>">
-            <label for="Servicio">Servicio:</label>
-            <input type="text" id="Servicio" name="Servicio" value="<?php echo $servicio; ?>">
-            <label for="fecha">Fecha de la cita</label>
-            <input type="date" id="Fecha" name="Fecha" value="<?php echo $fecha; ?>">
-            <label for="Hora">Hora de la cita</label>
-            <input type="time" id="Hora" name="Hora" value="<?php echo $hora; ?>">
-            <input type="submit" value="Actualizar ">
+    <div class="container">
+        <a href="./index.html">Atras</a>
+        <h1>Editar Citas</h1>
+        <form action="<?=$_SERVER ['PHP_SELF']?>" method="POST" style="width: 800px; margin: auto;">
+                <div class="form-group"> 
+                <label for="Nombre">Nombre</label>
+                <input type="text" id="Nombre" name="Nombre" required
+                value="<?php echo $nombre;?>"><br>
+            </div>
+                <div class="form-group"> 
+                <label for="apellidos">Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos"required
+                value="<?php echo $apellidos;?>"><br>
+            </div>
+                <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required
+                value="<?php echo $email;?>"><br>
+            </div>
+                <div class="form-group"> 
+                <label for="servicio">Servicio</label>
+                <select id="servicio" name="servicio" required
+                value="<?php echo $servicio;?>"><br>
+                    <option value="corte">Corte de cabello</option>
+                    <option value="manicure">Manicura</option>
+                    <option value="masajes">Masajes</option>
+                    <option value="peinado">Peinado</option>
+                </select>
+            </div>
+                <div class="form-group">
+                <label for="fecha">Fecha de la cita</label>
+                <input type="date" id="fecha" name="fecha" required
+                value="<?php echo $fecha;?>"><br>
+            </div>
+                <div class="form-group">
+                <label for="hora">Hora de la cita</label>
+                <input type="time" id="hora" name="hora" required
+                value="<?php echo $hora;?>">
+            </div>
+            <input type="hidden" name="id"
+            value="<?php echo $id;?>">
+           
+            <input type="submit" name="enviar" value="Actualizar">
+            <button><a href="verCitas.php">Regresar</a></button>
         </form>
     </div>
 </body>
-
 </html>
 
-<!--<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Perfil - MedicCare</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        .container {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input[type="text"],
-        input[type="email"],
-        input[type="date"],
-        input[type="password"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    
--->  
+   
 
 
+  
