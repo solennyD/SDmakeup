@@ -134,7 +134,7 @@
                     href='editarCitas.php?id=".$filas['ID']."'class='edit-button'>EDITAR</a>";
 
                     // Botón de Eliminar
-                    echo "<a href='verCitas.php=" . $filas["ID"] . "' class='delete-button' onclick='return confirm(\"¿Estás seguro de eliminar esta cita?\")'>ELIMINAR</a>";
+                    echo "<a href='eliminarCitas.php?id=". $filas["ID"] . "' class='delete-button' onclick='return confirm(\"¿Estás seguro de eliminar esta cita?\")'>ELIMINAR</a>";
                     echo "</td>";
                     echo "</tr>";
                 }
