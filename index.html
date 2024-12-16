@@ -46,16 +46,17 @@ body {
 
     </style>
 
-
+<!-- A partir de aqui el del estilo de las cortinas -->
 <style>
-  /* Estilo de las cortinas */
+ 
   .curtain {
       position: absolute;
       top: 0;
       bottom: 0;
-      background: #d4af37; /* Color de la cortina */
+      background: rgba(241, 206, 90, 0.271); /* Color de la cortina con transparencia */
       z-index: 1;
       opacity: 0.5;
+      border: 2px solid black; /* Borde negro */
   }
 
   /* Cortina izquierda */
@@ -63,7 +64,7 @@ body {
       left: 0;
       width: 50%;
       height: 100%;
-      animation: openCurtainLeft 1s ease-in-out forwards;
+      animation: openCurtainLeft 3s ease-in-out forwards;
   }
 
   /* Cortina derecha */
@@ -71,7 +72,7 @@ body {
       right: 0;
       width: 50%;
       height: 100%;
-      animation: openCurtainRight 1s ease-in-out forwards;
+      animation: openCurtainRight 3s ease-in-out forwards;
   }
 
   /* Animación para abrir la cortina izquierda */
