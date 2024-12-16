@@ -46,8 +46,67 @@ body {
 
 
     </style>
+
+
+<style>
+  /* Estilo básico para animacion en las transcicion*/
+  body {
+      margin: 0;
+      background-color: #f4f4f4;
+      justify-content: center;
+      align-items: center;
+      height: 10vh;
+      
+  }
+
+  /* Cortinas */
+  .curtain {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: #2e3d48;
+      z-index: 1;
+  }
+
+  /* Cortina izquierda */
+  .left {
+      left: 0;
+      animation: openCurtainLeft 2s forwards;
+  }
+
+  /* Cortina derecha */
+  .right {
+      right: 0;
+      animation: openCurtainRight 2s forwards;
+  }
+
+  /* Animación para abrir la cortina izquierda */
+  @keyframes openCurtainLeft {
+      0% {
+          left: 0;
+      }
+      100% {
+          left: -50%;
+      }
+  }
+
+  /* Animación para abrir la cortina derecha */
+  @keyframes openCurtainRight {
+      0% {
+          right: 0;
+      }
+      100% {
+          right: -50%;
+      }
+  }
+
+</style>
    
   </head>
+
+  <div class="curtain left"></div>
+    <div class="curtain right"></div>
 
   <body style="margin: 0">
     <div style="position: relative">
