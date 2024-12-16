@@ -39,7 +39,7 @@ if (isset($_SESSION['usuario'])) {
 		 <!-- Formulario que enviará una solicitud POST para cerrar sesión -->
                         <form action="logout.php" method="post" style="display: inline;">
                         <button type="submit" name="logout" class="nav-btn">
-                        <i class='glyphicon glyphicon-off'></i> Cerrar Sesión
+                        <i class='glyphicon glyphicon-off'></i> LOGOUT
                         </button>
                     </form>
           </div>
