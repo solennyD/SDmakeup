@@ -176,10 +176,15 @@
                 <div class="form-group"> 
                 <label for="servicio">Servicio</label>
                 <select id="servicio" name="servicio" required>
-                    <option value="corte">Corte de cabello</option>
-                    <option value="manicure">Manicura</option>
-                    <option value="masajes">Masajes</option>
-                    <option value="peinado">Peinado</option>
+                    <option value="corte">Depilacion Laser</option>
+                    <option value="manicure">Tintado de cejas</option>
+                    <option value="masajes">Postura de uñas</option>
+                    <option value="peinado">Masajes corporales</option>
+                    <option value="peinado">Maquillaje para cada ocasión</option>
+                    <option value="peinado">Trenzas</option>
+                    <option value="peinado">Depilación con cera</option>
+                    <option value="peinado">Micropigmentación de labios</option>
+                    <option value="peinado">Botox</option>
                 </select>
             </div>
                 <div class="form-group">
