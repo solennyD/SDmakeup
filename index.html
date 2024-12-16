@@ -15,7 +15,6 @@
     <link rel="icon" href="imagen/Grupo 1@2x.png">
 
     <style>
-     /* Estilos generales para la página */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -49,36 +48,30 @@ body {
 
 
 <style>
-  /* Estilo básico para animacion en las transcicion*/
-  body {
-      margin: 0;
-      background-color: #f4f4f4;
-      justify-content: center;
-      align-items: center;
-      height: 10vh;
-      
-  }
-
-  /* Cortinas */
+  /* Estilo de las cortinas */
   .curtain {
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 50%;
-      background: #2e3d48;
+      background: #d4af37; /* Color de la cortina */
       z-index: 1;
+      opacity: 0.5;
   }
 
   /* Cortina izquierda */
   .left {
       left: 0;
-      animation: openCurtainLeft 2s forwards;
+      width: 50%;
+      height: 100%;
+      animation: openCurtainLeft 1s ease-in-out forwards;
   }
 
   /* Cortina derecha */
   .right {
       right: 0;
-      animation: openCurtainRight 2s forwards;
+      width: 50%;
+      height: 100%;
+      animation: openCurtainRight 1s ease-in-out forwards;
   }
 
   /* Animación para abrir la cortina izquierda */
@@ -101,12 +94,22 @@ body {
       }
   }
 
+  /* Fondo detrás de las cortinas */
+  .content {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
+  }
 </style>
    
   </head>
 
   <div class="curtain left"></div>
     <div class="curtain right"></div>
+    <div class="content"></div>
 
   <body style="margin: 0">
     <div style="position: relative">
