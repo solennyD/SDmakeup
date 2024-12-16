@@ -174,10 +174,15 @@ include('bd.php');
                 <label for="servicio">Servicio</label>
                 <select id="servicio" name="servicio" required
                 value="<?php echo $servicio;?>"><br>
-                    <option value="corte">Corte de cabello</option>
-                    <option value="manicure">Manicura</option>
-                    <option value="masajes">Masajes</option>
-                    <option value="peinado">Peinado</option>
+                <option value="Depilacion Laser">Depilacion Laser</option>
+                    <option value="Tintado de cejas">Tintado de cejas</option>
+                    <option value="Postura de uñas">Postura de uñas</option>
+                    <option value="Masajes corporales">Masajes corporales</option>
+                    <option value="Maquillaje para cada ocasión">Maquillaje para cada ocasión</option>
+                    <option value="Trenzas">Trenzas</option>
+                    <option value="Depilación con cera">Depilación con cera</option>
+                    <option value="Micropigmentación de labios">Micropigmentación de labios</option>
+                    <option value="Botox">Botox</option>
                 </select>
             </div>
                 <div class="form-group">
