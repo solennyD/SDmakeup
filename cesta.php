@@ -35,10 +35,13 @@ if (isset($_SESSION['usuario'])) {
 	<body>
 		<header>
         <div class="menu">
-          
-          <a class="item" href="./login.php">
-            <div>LOGOUT</div>
-          </a>
+
+		 <!-- Formulario que enviará una solicitud POST para cerrar sesión -->
+                        <form action="logout.php" method="post" style="display: inline;">
+                        <button type="submit" name="logout" class="nav-btn">
+                        <i class='glyphicon glyphicon-off'></i> Cerrar Sesión
+                        </button>
+                    </form>
           </div>
         
 			<h1>Tienda</h1>
