@@ -30,61 +30,58 @@ if (isset($_SESSION['usuario'])) {
 		}
 
 		.cita-button{
-        background-color: #007bff;
+        background-color: darkgoldenrod;
         color: white;
-        padding: 5px 10px;
+        padding: 10px 10px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
         text-decoration: none;
-        margin: 3%;
         }
 
 		a{
         color: white; /* Cambia el color del texto a blanco */
         text-decoration: none; /* Quita el subrayado */
         }
-        a:hover {
-       text-decoration: underline; /* Opcional: Agrega subrayado al pasar el mouse */
-       }
 
 	   button {
-        background-color: darkgoldenrod;
+        background-color: #660000;
         color: white;
-        padding: 12px 100px;
+        padding: 10px 15px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
-        margin-left: 20%;
         position:relative;
     }
 
     button:hover {
-        background-color: green;
+        background-color: #3D0000;
     }
 
 		</style>
 
 	</head>
 
-	
-	<body>
-		<header>
-        <div class="menu">
-
+	<div class="menu">
 		 <!-- Formulario que enviará una solicitud POST para cerrar sesión -->
                         <form action="logout.php" method="post" style="display: inline;">
                         <button type="submit" name="logout" class="nav-btn">
-                        <i class='glyphicon glyphicon-off'></i> LOGOUT
+                        <i class='glyphicon glyphicon-off'></i> Logout
                         </button>
-
-						<button class="cita-button"><a href="./verCitas.php">Citas</a></button>
+						
                     </form>
           </div>
-        
-			<h1>Tienda</h1>
+	
+	<body>
+		<header> 
+		
+		
+		  <div>
+		  <button class="cita-button"><a href="./verCitas.php">Ver citas</a></button>
+		  </div>
+		  <h1>Tienda</h1>
 
 			<div class="container-icon">
 				<div class="container-cart-icon">
