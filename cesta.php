@@ -28,7 +28,20 @@ if (isset($_SESSION['usuario'])) {
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); 
 			background-color: #d4af37;
 		}
+
+		.cita-button{
+        background-color: #007bff;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+        margin: 3%;
+        }
 		</style>
+
 	</head>
 
 	
@@ -41,6 +54,8 @@ if (isset($_SESSION['usuario'])) {
                         <button type="submit" name="logout" class="nav-btn">
                         <i class='glyphicon glyphicon-off'></i> LOGOUT
                         </button>
+
+						<button class="cita-button"><a href="./verCitas.php">Citas</a></button>
                     </form>
           </div>
         

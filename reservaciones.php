@@ -136,18 +136,6 @@
         height: 100px;
         resize: none;
     }
-
-    .cita-button{
-        background-color: #007bff;
-        color: white;
-        padding: 5px 10px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-        text-decoration: none;
-        margin: 3%;
-        }
         .regre{
         background-color: darkgoldenrod;
         padding: 5px 10px;
@@ -213,7 +201,6 @@
             </div>
            
             <button type="submit" name="agendar">AGENDAR CITA</button><br>
-            <button class="cita-button"><a href="./verCitas.php">Citas</a></button>
             <button class="regre"> <a href="./index.html">Regresar</a></button>
         </form>
     </div>
