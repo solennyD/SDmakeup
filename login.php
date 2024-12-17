@@ -20,6 +20,7 @@
    <p>Usuario <input type="text" placeholder="usuario" name="usuario"></p>
    <p>Contraseña <input type="password" placeholder="Contraseña" name="password"></p>
    <input type="submit" value="Ingresar">
+   <br>
 
    <a class="" href="./formulario.php">
               <div>¿Aún no tienes cuenta?</div>

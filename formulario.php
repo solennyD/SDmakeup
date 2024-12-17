@@ -29,7 +29,21 @@
         if (!$ejecutarInsertar) {
             echo "Error en la consulta SQL: " . mysqli_error($enlace);
         } else {
-            echo "<h1>Registro exitoso!</h1>";
+            echo '<h1 id="success-message" style="position: fixed; top: 0; left: 50%; transform: translateX(-50%); background-color: rgba(0, 128, 0, 0.7); color: white; padding: 10px 20px; border-radius: 5px; z-index: 1000; text-align: center;">
+              Registro exitoso!
+            </h1>
+            <script>
+              // Desaparece el mensaje después de 2 segundos
+              setTimeout(function() {
+                const message = document.getElementById("success-message");
+                if (message) {
+                  message.style.transition = "opacity 0.4s ease";
+                  message.style.opacity = "0";
+                  setTimeout(() => message.remove(), 500); // Elimina completamente el elemento después de la animación
+                }
+              }, 2000);
+            </script>
+            ';
         }
     }
 ?>
