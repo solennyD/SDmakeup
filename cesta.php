@@ -40,6 +40,31 @@ if (isset($_SESSION['usuario'])) {
         text-decoration: none;
         margin: 3%;
         }
+
+		a{
+        color: white; /* Cambia el color del texto a blanco */
+        text-decoration: none; /* Quita el subrayado */
+        }
+        a:hover {
+       text-decoration: underline; /* Opcional: Agrega subrayado al pasar el mouse */
+       }
+
+	   button {
+        background-color: darkgoldenrod;
+        color: white;
+        padding: 12px 100px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 20%;
+        position:relative;
+    }
+
+    button:hover {
+        background-color: green;
+    }
+
 		</style>
 
 	</head>
