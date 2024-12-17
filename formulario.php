@@ -75,12 +75,16 @@
    <input type="password" id="password" name="password" required>
 
   </div>
+  <br>
+  <br>
 
 
   <div>
     <button type="submit" name="registrarse">Registrarse</button>
     <button type="reset">Limpiar</button>
   </div>
+  <br>
+  <br>
 
   <a class="" href="./login.php">
               <div>¿Ya tienes cuenta con SDmakeup?</div>
