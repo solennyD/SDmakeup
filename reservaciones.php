@@ -29,7 +29,23 @@
         if (!$ejecutarInsertar) {
             echo "Error en la consulta SQL: " . mysqli_error($enlace);
         } else {
-            echo "<h4>Registro exitoso!</h4>";
+            echo '
+            <h4 id="success-message" style="position: fixed; top: 0; left: 50%; transform: translateX(-50%); background-color: rgba(0, 128, 0, 0.7); color: white; padding: 10px 20px; border-radius: 5px; z-index: 1000; text-align: center;">
+              Registro exitoso!
+            </h4>
+            <script>
+              // Desaparece el mensaje después de 2 segundos
+              setTimeout(function() {
+                const message = document.getElementById("success-message");
+                if (message) {
+                  message.style.transition = "opacity 0.4s ease";
+                  message.style.opacity = "0";
+                  setTimeout(() => message.remove(), 500); // Elimina completamente el elemento después de la animación
+                }
+              }, 2000);
+            </script>
+            ';
+
         }
     }
 ?>
@@ -176,10 +192,15 @@
                 <div class="form-group"> 
                 <label for="servicio">Servicio</label>
                 <select id="servicio" name="servicio" required>
-                    <option value="corte">Corte de cabello</option>
-                    <option value="manicure">Manicura</option>
-                    <option value="masajes">Masajes</option>
-                    <option value="peinado">Peinado</option>
+                    <option value="Depilacion Laser">Depilacion Laser</option>
+                    <option value="Tintado de cejas">Tintado de cejas</option>
+                    <option value="Postura de uñas">Postura de uñas</option>
+                    <option value="Masajes corporales">Masajes corporales</option>
+                    <option value="Maquillaje para cada ocasión">Maquillaje para cada ocasión</option>
+                    <option value="Trenzas">Trenzas</option>
+                    <option value="Depilación con cera">Depilación con cera</option>
+                    <option value="Micropigmentación de labios">Micropigmentación de labios</option>
+                    <option value="Botox">Botox</option>
                 </select>
             </div>
                 <div class="form-group">

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Maquillaje</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <title>Galería de servicios</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
         /* generales */
         body {
@@ -82,16 +82,34 @@
     width: auto; 
     box-sizing: border-box; /
 }
-
-           
-       
-      
     </style>
 </head>
+
 <body>
+
 <header>
-    <a href="./index.html">Atras</a>
-    </header>
+
+<a style="margin-left: 25%;"href="./index.html" >
+    <img src="imagen/Grupo 1@2x.png">
+    </a>
+
+<div class="menu">
+  <a class="item" href="./formulario.php">
+    <div>Regístrate</div>
+  </a>
+  <a class="item" href="./login.php">
+    <div>Iniciar Sección</div>
+  </a>
+  <a class="item" href="./servicios.php">
+    <div>Servicios</div>
+  </a>
+  <a class="item" href="./reservaciones.php">
+    <div>Reservaciones</div>
+  </a>
+
+  <a href="#sobre-nosotros" style="padding-top: 1.8%;">Sobre Nosotros</a>
+</div>
+</header>
 
     <!-- Contenedor de la galería -->
     <div class="gallery-container">

@@ -15,7 +15,6 @@
     <link rel="icon" href="imagen/Grupo 1@2x.png">
 
     <style>
-     /* Estilos generales para la página */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -28,11 +27,10 @@ body {
     position: relative; 
     width: 100%; 
     max-width: 1500px; 
-    height: 400px; 
+    height: 500px; 
     margin: 50px auto; 
-    overflow: hidden; 
-    border-radius: 10px; 
-    background-color: #fdfafa; 
+ 
+ 
 }
 
 /* Estilo para la imagen dentro del contenedor */
@@ -41,22 +39,80 @@ body {
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
-    width: 70%; 
+    width: 128%; 
     height: auto; 
     object-fit: cover; 
 }
-
-
     </style>
+
+<!-- A partir de aqui el del estilo de las cortinas -->
+<style>
+ 
+  .curtain {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      opacity: 0.5;
+      border: 2px solid black; /* Borde negro */
+      background: url('./imagen/Grupo\ 10@2x.png') no-repeat center center;
+      background-size: cover;
+  }
+
+  /* Cortina izquierda */
+  .left {
+      left: 0;
+      width: 50%;
+      height: 100%;
+      animation: openCurtainLeft 4s ease-in-out forwards;
+  }
+
+  /* Cortina derecha */
+  .right {
+      right: 0;
+      width: 50%;
+      height: 100%;
+      animation: openCurtainRight 4s ease-in-out forwards;
+  }
+
+  /* Animación para abrir la cortina izquierda */
+  @keyframes openCurtainLeft {
+      0% {
+          left: 0;
+      }
+      100% {
+          left: -50%;
+      }
+  }
+
+  /* Animación para abrir la cortina derecha */
+  @keyframes openCurtainRight {
+      0% {
+          right: 0;
+      }
+      100% {
+          right: -50%;
+      }
+  }
+
+
+</style>
    
   </head>
+
+  <div class="curtains"></div>
+  <div class="curtain left"></div>
+    <div class="curtain right"></div>
+    
 
   <body style="margin: 0">
     <div style="position: relative">
 
       <header>
 
+        <a style="margin-left: 25%;"href="./index.html" >
           <img src="imagen/Grupo 1@2x.png">
+          </a>
         
 
           <div class="menu">
@@ -78,7 +134,7 @@ body {
       </header>
 
           <div class="portada" style="margin-bottom: 5%;">
-              <img src="https://jssfreitesmakeup.com/wp-content/uploads/2019/11/Colores-de-Piel-para-Maquilljae.jpg">
+              <img src="./imagen/deskTopoCateg_ekos_bannerInst2-gifOPT.webp">
           </div>
     
 

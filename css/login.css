@@ -16,7 +16,7 @@ form {
 	padding: 50px 20px;
 	background-color: rgba(203, 202, 202, 0.444);
 	margin: calc(25% + 100px);
-	margin-top: 70px;
+	margin-top: 6%;
 	padding-top: 28px;
 	margin-bottom: 30px  
 }
@@ -27,6 +27,7 @@ h1 {
 	color: rgb(14, 14, 14)
     
 }
+
 
 input {
 	width: calc(100% - 20px);
@@ -50,16 +51,16 @@ input[type='submit']{
 
 .bad {
 	text-align: center;
-	padding: 12px;
+	padding: 1px;
     background-position: center;
-	background-color: #a22;
+	background-color: rgb(199, 50, 50);
 	color: #fff
 }
 
 .good{
      text-align: center;
      padding: 1px;
-     background-color: rgb(94, 244, 44);
+     background-color: rgb(178, 249, 155);
      color: #fff
 }
 .off{
@@ -74,9 +75,9 @@ body{
 	background-image:url(../imagen/cesta.jpg);
 	width: 100%;
 	height:100%;
-	color:white;
     background-repeat: no-repeat; 
     padding-top: 10%;
+	background-size: cover;
 	
 }
 
