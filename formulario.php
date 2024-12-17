@@ -82,7 +82,7 @@
   </div>
 
   <a class="" href="./login.php">
-              <div>¿Ya tienes cuenta con SDmakeup?</div>
+              <div>¿Ya tienes cuenta con SD_makeup?</div>
             </a>
     </form>
 </body>
