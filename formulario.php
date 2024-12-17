@@ -101,7 +101,7 @@
   <br>
 
   <a class="" href="./login.php">
-              <div>¿Ya tienes cuenta con SD_makeup?</div>
+              <div>¿Ya tienes cuenta con SD-makeup?</div>
             </a>
     </form>
 </body>
