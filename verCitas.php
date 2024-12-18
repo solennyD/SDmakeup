@@ -79,7 +79,8 @@
         text-decoration: none; /* Quita el subrayado */
         }
         a:hover {
-       text-decoration: underline; /* Opcional: Agrega subrayado al pasar el mouse */
+       text-decoration: none; /* Opcional: Agrega subrayado al pasar el mouse */
+       color: aqua;
        }
     </style>
 </head>
@@ -114,7 +115,7 @@
             $sql = "SELECT ID, Nombre, Apellidos, Email, Servicio, Fecha, Hora FROM citas";
             $resultado = $conexion->query($sql);
 
-            $filas=mysqli_fetch_assoc($resultado);
+            //$filas=mysqli_fetch_assoc($resultado);
 
             // Mostrar los resultados en la tabla
             if ($resultado->num_rows> 0) {

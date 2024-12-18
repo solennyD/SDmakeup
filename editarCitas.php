@@ -131,6 +131,7 @@ include('bd.php');
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
+        text-decoration:none;
     }
 
     button:hover {
@@ -145,6 +146,22 @@ include('bd.php');
     .form-group textarea {
         height: 100px;
         resize: none;
+    }
+
+    .boton-update{
+        background-color: darkgoldenrod;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 2%;
+    }
+
+    .boton-update:hover{
+        background-color:rgb(46, 137, 56);
+
     }
 
 </style>
@@ -198,8 +215,8 @@ include('bd.php');
             <input type="hidden" name="id"
             value="<?php echo $id;?>">
            
-            <input type="submit" name="enviar" value="Actualizar" style="width: 20%;">
-            <button style="width: 20%;"> <a href="./verCitas.php" style="margin-right: 100%;">Regresar</a></button>
+            <input class="boton-update" type="submit" name="enviar" value="Actualizar" style="width: 20%;">
+            <button style="width: 20%;"> <a href="./verCitas.php" style="margin-right: 100%; text-decoration:none; color:white">Regresar</a></button>
         </form>
     </div>
 </body>
