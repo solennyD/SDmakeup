@@ -35,15 +35,19 @@ body{
     background-size: cover;
 }
 
+/*Estilo del carrito*/
 .icon-cart{
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     transform: scale(0.95); 
+    color: #01010b;
+
   
 }
 
 .icon-cart:hover{
     cursor: pointer;
+    color: #060234;
 }
 
 img{
@@ -61,14 +65,16 @@ header{
     position: relative;
 }
 
+/*Estilo del circulo donde sale cantidad de productos*/
+
 .count-products{
     position: absolute;
     top: 55%;
     right: 0;
-    background-color: #000;
+    background-color: rgba(14, 14, 14, 0.862);
     color: #fff;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +102,7 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 30px;
-    border-bottom: 1px solid rgba(119, 7, 7, 0.2);
+    border-bottom: 1px solid rgba(173, 17, 17, 0.523);
 
 }
 
@@ -142,11 +148,13 @@ header{
 .cart-total h3{
     font-size: 20px;
     font-weight: 700;
+   
 }
 
 .total-pagar{
     font-size: 20px;
     font-weight: 900;
+    color: green;
 }
 
 .hidden-cart{

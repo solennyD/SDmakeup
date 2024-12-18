@@ -30,7 +30,7 @@ if (isset($_SESSION['usuario'])) {
 		}
 
 		.cita-button{
-        background-color: darkgoldenrod;
+        background-color: green;
         color: white;
         padding: 10px 10px;
         border: none;
@@ -39,6 +39,10 @@ if (isset($_SESSION['usuario'])) {
         font-size: 16px;
         text-decoration: none;
         }
+
+		.cita-button:hover{
+			background-color:rgb(28, 77, 4);
+		}
 
 		a{
         color: white; /* Cambia el color del texto a blanco */
@@ -91,13 +95,12 @@ if (isset($_SESSION['usuario'])) {
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				class="icon-cart"
-				>
+				class="icon-cart">
+
 				<path
 				 stroke-linecap="round"
 				 stroke-linejoin="round"
-				 d="M3 3h2l.68 5.268a2 2 0 001.98 1.732h9.04a2 2 0 001.98-1.732L19 3h2m-7 12a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0z"
-				 />
+				 d="M3 3h2l.68 5.268a2 2 0 001.98 1.732h9.04a2 2 0 001.98-1.732L19 3h2m-7 12a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0z"/>
 				</svg>
 
   
@@ -112,7 +115,7 @@ if (isset($_SESSION['usuario'])) {
 							<div class="info-cart-product">
 								<span class="cantidad-producto-carrito">1</span>
 								<p class="titulo-producto-carrito">Maquillajes</p>
-								<span class="precio-producto-carrito">$50</span>
+								<span class="precio-producto-carrito">$150</span>
 							</div>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +152,7 @@ if (isset($_SESSION['usuario'])) {
 				</figure>
 				<div class="info-product">
 					<h2>Labial rojo</h2>
-					<p class="price">$10</p>
+					<p class="price">$50</p>
 					<button class="btn-add-cart">Añadir al carrito</button>
 				</div>
 			</div>
@@ -162,7 +165,7 @@ if (isset($_SESSION['usuario'])) {
 				</figure>
 				<div class="info-product">
 					<h2>Set de brochas</h2>
-					<p class="price">$34</p>
+					<p class="price">$94</p>
 					<button class="btn-add-cart">Añadir al carrito</button>
 				</div>
 			</div>
@@ -175,7 +178,7 @@ if (isset($_SESSION['usuario'])) {
 				</figure>
 				<div class="info-product">
 					<h2>Paleta de sombras</h2>
-					<p class="price">$50</p>
+					<p class="price">$500</p>
 					<button class="btn-add-cart">Añadir al carrito</button>
 				</div>
 			</div>
@@ -188,7 +191,7 @@ if (isset($_SESSION['usuario'])) {
 				</figure>
 				<div class="info-product">
 					<h2>Base</h2>
-					<p class="price">$100</p>
+					<p class="price">$680</p>
 					<button class="btn-add-cart">Añadir al carrito</button>
 				</div>
 			</div>
@@ -201,7 +204,7 @@ if (isset($_SESSION['usuario'])) {
 				</figure>
 				<div class="info-product">
 					<h2>Contorno</h2>
-					<p class="price">$45</p>
+					<p class="price">$145</p>
 					<button class="btn-add-cart">Añadir al carrito</button>
 				</div>
 			</div>
@@ -214,7 +217,7 @@ if (isset($_SESSION['usuario'])) {
 				</figure>
 				<div class="info-product">
 					<h2>Desmaquillante</h2>
-					<p class="price">$50</p>
+					<p class="price">$360</p>
 					<button class="btn-add-cart">Añadir al carrito</button>
 				</div>
 			</div>
