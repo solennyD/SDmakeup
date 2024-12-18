@@ -146,19 +146,19 @@ if (isset($_SESSION['usuario'])) {
     <h3 style="color: #333; font-size: 30px; margin-bottom: 20px; ">Productos Recomendados</h3>
     
     <div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
-        <div style="text-align: center; max-width: 450px; flex: 1 1 30%; background-color:darkgoldenrod; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        <div style="text-align: center; max-width: 450px; flex: 1 1 30%; background-color:rgba(0, 0, 0, 0.26);; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
             <img src="https://apolomakeup.es/wp-content/uploads/2023/01/karly-jones-xBqYLnRhfaI-unsplash-1-1.jpg" alt="Base de Maquillaje" style="width: 100%; border-radius: 8px; margin-bottom: 15px;" />
             <p style="color: #333; font-size: 16px; margin-bottom: 10px;">Base de Maquillaje - $680.00</p>
             <a href="./cesta.php" style="color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s;">Comprar ahora</a>
         </div>
         
-        <div style="text-align: center; max-width: 450px; flex: 1 1 30%; background-color: darkgoldenrod; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        <div style="text-align: center; max-width: 450px; flex: 1 1 30%; background-color: rgba(0, 0, 0, 0.26);; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
             <img src="https://images.unsplash.com/photo-1684244110880-b7dda6c68618?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGFsZXRhJTIwZGUlMjBtYXF1aWxsYWplfGVufDB8fDB8fHww" alt="Paleta de Sombras" style="width: 100%; border-radius: 8px; margin-bottom: 15px;" />
             <p style="color: #333; font-size: 16px; margin-bottom: 10px;">Paleta de Sombras - $500.00</p>
             <a href="./cesta.php" style="color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s;">Comprar ahora</a>
         </div>
         
-        <div style="text-align: center; max-width: 450px; flex: 1 1 30%; background-color: darkgoldenrod; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        <div style="text-align: center; max-width: 450px; flex: 1 1 30%; background-color: rgba(0, 0, 0, 0.26);; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
             <img src="https://images.unsplash.com/photo-1618331755914-6397194df631?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVtb3ZlZG9yJTIwZGUlMjBtYXF1aWxsYWplfGVufDB8fDB8fHww" alt="Desmaquillante" style="width: 100%; border-radius: 8px; margin-bottom: 15px;" />
             <p style="color: #333; font-size: 16px; margin-bottom: 10px;">Desmaquillante - $360.00</p>
             <a href="./cesta.php" style="color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s;">Comprar ahora</a>
@@ -224,7 +224,7 @@ if (isset($_SESSION['usuario'])) {
     <h3>Mi Historial de Servicios</h3>
     <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
         <thead>
-            <tr style="background-color: darkgoldenrod; color: #333;">
+            <tr style="background-color: rgba(0, 0, 0, 0.26); color: #333;">
                 <th style="padding: 8px; text-align: left;">Servicio</th>
                 <th style="padding: 8px; text-align: left;">Fecha</th>
                 <th style="padding: 8px; text-align: left;">Precio</th>
