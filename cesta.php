@@ -4,7 +4,8 @@ session_start(); // Iniciar sesión para acceder a las variables de sesión
 // Verifica si el usuario está logueado
 if (isset($_SESSION['usuario'])) {
     // luego de confirmar el nombre del user, se muestra
-    echo "<h1 class='bienvenido'>Bienvenido, " . $_SESSION['usuario'] . "</h1>";
+    echo "<h1 class='bienvenido' id='bienvenido'>Bienvenido, " . $_SESSION['usuario'] . "</h1><script>setTimeout(function() { document.getElementById('bienvenido').style.display = 'none'; }, 3000);</script>";
+
 } else {
     // Si no está logueado, redirigimos al login
     header("Location: login.php");
