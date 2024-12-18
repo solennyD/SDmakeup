@@ -100,9 +100,12 @@
   <br>
   <br>
 
-  <a class="" href="./login.php">
+  <a style="color: darkgreen; text-decoration:none"href="./login.php">
               <div>¿Ya tienes cuenta con SD-makeup?</div>
             </a>
+
+            
+        
     </form>
 </body>
 </html>
