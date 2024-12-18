@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -98,11 +97,12 @@
                 <th>Servicio</th>
                 <th>Fecha</th>
                 <th>Hora</th>
-                <th>Acciones</th> <!-- Columna para los botones -->
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <?php
+            
+        <?php
             // Conexión a la base de datos
             $conexion = new mysqli("localhost", "root", "", "sdmakeup");
 
@@ -152,4 +152,4 @@
                 <button> <a href="./dashboardUser.php">Regresar</a></button>
             
 </body>
-</html>
+</html> 
