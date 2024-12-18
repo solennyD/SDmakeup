@@ -100,8 +100,8 @@
             transition: background-color 0.3s ease;
         }
 
-        .logout-btn:hover {
-            background-color: #e04343;
+        .nav-btn:hover {
+            background-color:rgb(85, 3, 3);
         }
     </style>
 </head>
