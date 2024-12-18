@@ -53,7 +53,6 @@ if (isset($_SESSION['usuario'])) {
 		</style>
 
 	</head>
-
 	<body>
 		<header> 
 		  <h1>Tienda</h1>

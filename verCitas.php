@@ -16,7 +16,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            background-image: url(../proyecto-final_solennydeleon/imagen/cesta.jpg);
+            background-image: url(../proyecto-final_solennydeleon/imagen/SEa.jpeg);
         }
         h2 {
             margin-top: 50px;

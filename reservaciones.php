@@ -63,7 +63,7 @@
     <style>
     body {
         font-family: Arial, sans-serif;
-        background-image: url(../proyecto-final_solennydeleon/imagen/cesta.jpg);
+        background-image: url(../proyecto-final_solennydeleon/imagen/SEa.jpeg);
         margin: 0;
         padding: 0;
         display: flex;
