@@ -29,28 +29,13 @@ if (isset($_SESSION['usuario'])) {
 			background-color: #d4af37;
 		}
 
-		.cita-button{
-        background-color: green;
-        color: white;
-        padding: 10px 10px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-        text-decoration: none;
-        }
-
-		.cita-button:hover{
-			background-color:rgb(28, 77, 4);
-		}
-
 		a{
         color: white; /* Cambia el color del texto a blanco */
         text-decoration: none; /* Quita el subrayado */
         }
 
 	   button {
-        background-color: #660000;
+        background-color: darkgoldenrod;
         color: white;
         padding: 10px 15px;
         border: none;
@@ -61,30 +46,15 @@ if (isset($_SESSION['usuario'])) {
     }
 
     button:hover {
-        background-color: #3D0000;
+        background-color:rgb(17, 93, 4);
     }
 
 		</style>
 
 	</head>
 
-	<div class="menu">
-		 <!-- Formulario que enviará una solicitud POST para cerrar sesión -->
-                        <form action="logout.php" method="post" style="display: inline;">
-                        <button type="submit" name="logout" class="nav-btn">
-                        <i class='glyphicon glyphicon-off'></i> Logout
-                        </button>
-						
-                    </form>
-          </div>
-	
 	<body>
 		<header> 
-		
-		
-		  <div>
-		  <button class="cita-button"><a href="./verCitas.php">Ver citas</a></button>
-		  </div>
 		  <h1>Tienda</h1>
 
 			<div class="container-icon">

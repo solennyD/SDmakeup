@@ -201,7 +201,7 @@
             </div>
            
             <button type="submit" name="agendar">AGENDAR CITA</button><br>
-            <button class="regre"> <a href="./index.html">Regresar</a></button>
+            <button class="regre"> <a href="./dashboardUser.php">Regresar</a></button>
         </form>
     </div>
 </body>

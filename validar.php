@@ -25,8 +25,8 @@ if ($filas) {
         $_SESSION['usuario_id'] = $usuario_data['id']; // se guarda el id del user
         $_SESSION['usuario'] = $usuario_data['usuario']; // se guarda el nombre del user
 
-        // Redirigimos a la página de la cesta o del compras
-        header("Location: cesta.php");
+        // Redirigimos a la página del user o del compras
+        header("Location: dashboardUser.php");
         exit(); // Detener el código después de la redirección
     } else {
         // Si la contraseña es incorrecta
