@@ -107,5 +107,27 @@
             
         
     </form>
+
+    <footer>
+        
+
+        <div>
+          <h1>Contáctanos</h1>
+
+          <p style="margin-left: 10%;">
+            📍 Dirección: Blue Mall. 2do piso
+            📞 Teléfono: +[1] 650-852-1212
+            📧 Correo electrónico: [sdmakeup@gmail.com] 
+            🌐 Sitio web: www.sdmakeup.com
+            📱 Redes sociales: Instagram: https://www.instagram.com/ 
+
+          </p>
+
+        </div>
+        
+        
+        
+        
+    </footer>
 </body>
 </html>
