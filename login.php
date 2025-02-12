@@ -25,7 +25,7 @@
    <br>
 
    <a style=" text-decoration:none" href="./formulario.php">
-              <div style="color: red">¿Aún no tienes cuenta?</div>
+              <div style="color: white">¿Aún no tienes cuenta?</div>
             </a>
    
    </form> 
