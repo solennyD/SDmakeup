@@ -17,9 +17,9 @@
     
    <form action="validar.php" method="post">
    <h1 class="animate__animated animate__backInLeft">Iniciar Sección</h1>
-   <p>Usuario <input type="text" placeholder="usuario" name="usuario"></p>
+   <p>Usuario <input type="text" placeholder="Usuario" name="usuario"></p>
    <br>
-   <p>Contraseña <input type="password" placeholder="Contraseña" name="password"></p>
+   <p>Contraseña <input type="password" placeholder="********" name="password"></p>
    <input type="submit" value="Ingresar">
    <br>
    <br>
